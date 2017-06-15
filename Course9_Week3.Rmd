@@ -1,0 +1,18 @@
+---
+title: "R markdown PPT and Plotly"
+author: "Sapna Giri"
+date: "Thursday, June 15, 2017"
+output: ioslides_presentation
+---
+
+## 15 June, 2017
+```{r, echo=FALSE, message=FALSE, warning=FALSE, error=FALSE}
+library(plotly)
+```
+  
+**mtcars**
+```{r, echo=FALSE,message=FALSE}
+data(mtcars)
+mtcars$cyl <- as.factor(mtcars$cyl)
+plot_ly(mtcars, x=~wt, y=~mpg, mode="markers", color=~cyl)
+```
